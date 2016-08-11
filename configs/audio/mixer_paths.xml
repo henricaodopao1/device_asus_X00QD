@@ -2298,6 +2298,10 @@
         <path name="handset" />
     </path>
 
+    <path name="voice-hac-handset">
+        <path name="handset" />
+    </path>
+    
 	<path name="handset-for-voip">
         <path name="handset" />
     </path>
