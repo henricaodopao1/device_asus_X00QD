@@ -40,6 +40,7 @@ persist.vendor.camera.hdring                  u:object_r:vendor_camera_prop:s0
 persist.vendor.camera.pickres.prop_hdr        u:object_r:vendor_camera_prop:s0
 vendor.camera.aux.                            u:object_r:vendor_camera_prop:s0
 camera.                                             u:object_r:camera_prop:s0
+ro.camera.                                          u:object_r:camera_prop:s0
 camera.qcom.misc.disable                            u:object_r:default_prop:s0
 media.camera.debug.loglevel                         u:object_r:camera_prop:s0
 persist.camera.                                     u:object_r:camera_prop:s0
