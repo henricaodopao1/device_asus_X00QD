@@ -51,4 +51,8 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
    
      <!-- Whether or not to show the ripple animation when unlocking the device using fringerprint. -->
     <bool name="config_show_fp_ripple">false</bool>
+
+    <!-- Should we vibrate on an icon animation of the shelf. This should only be active if the
+     vibrator is capable of subtle vibrations -->
+    <bool name="config_vibrateOnIconAnimation">true</bool>
 </resources>
