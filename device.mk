@@ -356,10 +356,13 @@ PRODUCT_PACKAGES += \
     android.hardware.power-service.asus_sdm660-libperfmgr \
     android.hardware.power.stats@1.0-service.mock \
     android.hardware.power.stats@1.0.vendor
-
-# Powerhint
+    
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+    
+# Perfd (dummy)
+PRODUCT_PACKAGES += \
+    libqti-perfd-client
 
 # Public Libraries
 PRODUCT_COPY_FILES += \
