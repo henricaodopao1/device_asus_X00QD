@@ -446,6 +446,7 @@ PRODUCT_COPY_FILES += \
     
 # Speed profile services and wifi-service to reduce RAM and storage
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
+PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
