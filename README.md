@@ -1,7 +1,7 @@
-Device tree for ASUS Zenfone 5 (ZE620KL)
+Device tree for Asus ZenFone 5 (X00QD)
 ========================================================
 
-The ZenFone 5 (codenamed _"ZE620KL"_) is a mid-range smartphone from ASUS.
+The ZenFone 5 (codenamed _"X00QD"_) is a mid-range smartphone from Asus.
 It was released on May 2018.
 
 Basic   | Spec Sheet
