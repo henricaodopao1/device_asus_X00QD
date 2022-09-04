@@ -1,25 +1,18 @@
-# Device Tree for Asus Zenfone Max Pro M1
-The Asus Zenfone Max Pro M1 (codenamed _"ASUS_X00TD"_) is a mid-range smartphone from Asus.
-It was announced in April 2018 and released in May 2018.
+Device tree for ASUS Zenfone 5 (ZE620KL)
+========================================================
 
-## Device specifications
+The ZenFone 5 (codenamed _"ZE620KL"_) is a mid-range smartphone from ASUS.
+It was released on May 2018.
 
-| Device                  | Asus Zenfone Max Pro M1                                     |
-| ----------------------- | :---------------------------------------------------------- |
-| SoC                     | Qualcomm SDM660 Snapdragon 636                              |
-| CPU                     | 8x Qualcomm® Kryo™ 260 CPU                                  |
-| GPU                     | Adreno 509                                                  |
-| Memory                  | 3GB / 4GB RAM / 6GB (LPDDR4X)                               |
-| Shipped Android version | 8.1.0                                                       |
-| Storage                 | 64GB eMMC 5.1 flash storage                                 |
-| MicroSD                 | Up to 2 TB                                                  |
-| Battery                 | Non-removable Li-Po 5000 mAh                                |
-| Dimensions              | 159 x 76 x 8.5 mm                                           |
-| Display                 | 2160 x 1080 (18:9), 5.99 inch                               |
-| Rear camera 1           | 13MP, 1.12-micron pixels, f/2.2 Dual LED flash              |
-| Rear camera 2           | 5MP, 1.12-micron pixels, f/2.4                              |
-| Front camera            | 8MP, 1-micron pixels, f/2.2 1080p 30 fps video, Selfie-light|
-
-## Device picture
-
-![Asus Zenfone Max Pro M1](https://www.phonebunch.com/phone-pictures/asus_zenfone_max_pro_m1-3178%20(1).jpg)
+Basic   | Spec Sheet
+-------:|:-------------------------
+CPU     | Octa-core Kryo 260
+Chipset | Qualcomm SDM636 Snapdragon 636
+GPU     | Adreno 509
+Memory  | 4 GB RAM
+Shipped Android Version | 8.0
+Storage | 64 GB
+MicroSD | Up to 2 TB
+Battery | Li-Ion 3300mAh battery
+Display | 1080 x 2246 pixels, 6.2 inches (~402 ppi pixel density)
+Camera  | Dual: 12 MP + 8 MP, phase detection autofocus, gyro EIS, dual-LED flash

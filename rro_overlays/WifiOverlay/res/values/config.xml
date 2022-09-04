@@ -65,5 +65,5 @@
     <bool translatable="false" name="config_wifi_framework_enable_sar_tx_power_limit">true</bool>
 
     <!-- Default access point SSID used for tethering -->
-    <string name="wifi_tether_configure_ssid_default" translatable="false">ZenFone Max Pro M1</string>
+    <string name="wifi_tether_configure_ssid_default" translatable="false">ZenFone 5</string>
 </resources>

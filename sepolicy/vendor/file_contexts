@@ -1,3 +1,10 @@
+# Asus Mounts
+/(ADF|vendor/ADF)                                                           u:object_r:adf_file:s0
+/(APD|vendor/APD)                                                           u:object_r:apd_file:s0
+/(asdf|vendor/asdf)                                                         u:object_r:asdf_file:s0
+/(factory|vendor/factory)                                                   u:object_r:fac_file:s0
+/xrom                                                                       u:object_r:system_file:s0
+
 # Fingerprint
 /dev/fpsdev0                                                                  u:object_r:cdfinger_device:s0
 /dev/goodix_fp                                                                u:object_r:fingerprintd_device:s0
@@ -10,6 +17,12 @@
 # (e.g. Google Camera App)
 /mnt/vendor/dsp/fastrpc_shell_3                                               u:object_r:public_adsprpcd_file:s0
 
+# Data
+/APD/\.bh                                                                   u:object_r:batterystats_file:s0
+/APD/\.bs                                                                   u:object_r:batterystats_file:s0
+/APD/bat_safety                                                             u:object_r:batterystats_file:s0
+/asdf/CHGLimit_kernel                                                       u:object_r:batterystats_file:s0
+
 # Light HAL
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.X00TD                u:object_r:hal_light_default_exec:s0
 
@@ -20,9 +33,14 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power-service\.asus_sdm660-libperfmgr              u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power\.stats@1\.0-service\.mock                      u:object_r:hal_power_stats_default_exec:s0
 
+/bt_firmware(/.*)?                              u:object_r:bt_firmware_file:s0
+/firmware(/.*)?                                 u:object_r:firmware_file:s0
+
 # Sensors
 /sys/devices/virtual/input/input[0-9]+/stk3x[0-9]x-light(/.*)?                    u:object_r:sysfs_sensors:s0
 /sys/devices/virtual/input/input[0-9]+/stk3x[0-9]x-proximity(/.*)?                u:object_r:sysfs_sensors:s0
+/sys/devices/virtual/sensors/frgbsensor(/.*)?		u:object_r:sysfs_sensors:s0
+/sys/devices/virtual/sensors/[lp]sensor(/.*)?		u:object_r:sysfs_sensors:s0
 
 /sys/module/stk3x[0-9]x/parameters/call_status_flag                               u:object_r:sysfs_call_status:s0
 

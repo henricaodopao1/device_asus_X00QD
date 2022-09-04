@@ -14,6 +14,6 @@ LOCAL_C_INCLUDES := \
     system/libbase/include
 
 LOCAL_SRC_FILES := recovery_updater.cpp
-LOCAL_MODULE := librecovery_updater_asus
+LOCAL_MODULE := librecovery_updater_X00QD
 
 include $(BUILD_STATIC_LIBRARY)

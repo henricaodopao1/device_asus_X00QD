@@ -27,9 +27,56 @@
 #
 #
 
+on fs
+    wait /dev/block/bootdevice/by-name/APD
+    chown root system /APD
+    chmod 0771 /APD
+    restorecon_recursive /APD
+    wait dev/block/bootdevice/by-name/asdf
+    chown root system /asdf
+    chmod 0771 /asdf
+    restorecon_recursive /asdf
+
+    chmod 0770 /vendor/factory
+    restorecon_recursive /vendor/factory
+
+    chmod 770 /mnt/vendor/persist
+	chmod 770 /mnt/vendor/persist/data
+
+    chown system system /vendor/ADF
+    chmod 0775 /vendor/ADF
+    restorecon_recursive /vendor/ADF
+
 on early-boot
-     chown system system /dev/input/event3  # stk3xXx-light
-     chown system system /dev/input/event4  # stk3xXx-proximity
+    chmod 0644 /sys/class/sensors/stk3x1x-proximity/sensors_enable
+    chmod 0644 /sys/class/sensors/stk3x1x-proximity/sensors_delay
+    chmod 0644 /sys/class/sensors/stk3x1x-proximity/sensors_calibrate
+    chmod 0644 /sys/class/sensors/stk3x1x-proximity/sensors_enable_wakeup
+    chmod 0644 /sys/class/sensors/stk3x1x-proximity/sensors_flush
+    chown system system /sys/class/sensors/stk3x1x-proximity/sensors_enable
+    chown system system /sys/class/sensors/stk3x1x-proximity/sensors_delay
+    chown system system /sys/class/sensors/stk3x1x-proximity/sensors_calibrate
+    chown system system /sys/class/sensors/stk3x1x-proximity/sensors_enable_wakeup
+    chown system system /sys/class/sensors/stk3x1x-proximity/sensors_flush
+
+    chmod 0644 /sys/class/sensors/stk3x1x-light/sensors_enable
+    chmod 0644 /sys/class/sensors/stk3x1x-light/sensors_delay
+    chmod 0644 /sys/class/sensors/stk3x1x-light/sensors_calibrate
+    chmod 0644 /sys/class/sensors/stk3x1x-light/sensors_enable_wakeup
+    chmod 0644 /sys/class/sensors/stk3x1x-light/sensors_flush
+    chown system system /sys/class/sensors/stk3x1x-light/sensors_enable
+    chown system system /sys/class/sensors/stk3x1x-light/sensors_delay
+    chown system system /sys/class/sensors/stk3x1x-light/sensors_calibrate
+    chown system system /sys/class/sensors/stk3x1x-light/sensors_enable_wakeup
+    chown system system /sys/class/sensors/stk3x1x-light/sensors_flush
+
+on charger
+    chown system system /vendor/factory
+    chmod 0770 /vendor/factory
+    chown root root /vendor/asdf
+    chmod 0775 /vendor/asdf
+    write /vendor/asdf/CHGLimit 0
+    write /vendor/asdf/CHGLimit_kernel 0
 
 on boot
     chown system system /sys/class/power_supply/battery/charging_enabled
@@ -45,6 +92,7 @@ service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.2-service
     group nfc
     task_profiles ServiceCapacityLow
     disabled
+
 
 on property:ro.hq.support.nfc=1
     enable vendor.nfc_hal_service

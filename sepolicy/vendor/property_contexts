@@ -1,6 +1,21 @@
 # Camera
 persist.vendor.camera.hdring                  u:object_r:vendor_camera_prop:s0
 persist.vendor.camera.pickres.prop_hdr        u:object_r:vendor_camera_prop:s0
+vendor.camera.aux.                            u:object_r:vendor_camera_prop:s0
+
+# Audio
+use.audio.eu.parameters            u:object_r:hal_audio_prop:s0
+audio.asus.rcv_amp_cal             u:object_r:hal_audio_prop:s0
+audio.asus.spk_amp_cal             u:object_r:hal_audio_prop:s0
+audio.output.selected              u:object_r:hal_audio_prop:s0
+audio.mic.selected                 u:object_r:hal_audio_prop:s0
+persist.audio.format.24bit         u:object_r:hal_audio_prop:s0
+persist.vendor.audio.fluence.voicecomm          u:object_r:hal_audio_prop:s0
+
+
+# Sensors 
+sys.asus.ssc.reset                 u:object_r:sensors_prop:s0
+sys.asus.accelerometer_on          u:object_r:sensors_prop:s0
 
 # Fingerprint
 property.cdfinger.enablesave                  u:object_r:vendor_fingerprint_prop:s0

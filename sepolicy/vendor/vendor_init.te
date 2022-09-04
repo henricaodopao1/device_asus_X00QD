@@ -1,6 +1,22 @@
+typeattribute vendor_init data_between_core_and_vendor_violators;
+
+allow vendor_init asdf_file:lnk_file read;
+allow vendor_init fac_file:filesystem getattr;
+allow vendor_init log_file:dir relabelto;
+
 allow init adsprpcd_file:file mounton;
 allow vendor_init proc:file w_file_perms;
 
-allow vendor_init nfc_sensors_prop:file { read };
+dontaudit vendor_init adf_file:dir setattr;
+dontaudit vendor_init fac_file:dir setattr;
 
+allow vendor_init nfc_sensors_prop:file { read };
+allow vendor_init device:file { create write };
 set_prop(vendor_init, vendor_power_prop)
+
+allow init adsprpcd_file:file mounton;
+
+# Allow vendor_init to set vendor_camera_prop
+set_prop(vendor_init, vendor_camera_prop)
+
+allow vendor_init proc_sched_energy_aware:file w_file_perms;

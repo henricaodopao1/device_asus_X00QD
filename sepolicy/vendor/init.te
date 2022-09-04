@@ -1,2 +1,14 @@
-dontaudit init bt_firmware_file:filesystem getattr;
-dontaudit init firmware_file:filesystem getattr;
+allow init adf_file:dir mounton;
+allow init apd_file:dir mounton;
+allow init asdf_file:dir mounton;
+allow init block_device:blk_file write;
+allow init bt_firmware_file:filesystem getattr;
+allow init fac_file:dir mounton;
+allow init fac_file:filesystem { mount relabelfrom relabelto };
+allow init firmware_file:filesystem getattr;
+allow init proc:file { write };
+allow init vendor_file:file execute;
+allow init hwservicemanager:binder call;
+allow init hidl_base_hwservice:hwservice_manager add;
+allow init hwservicemanager:binder transfer;
+allow init socket_device:sock_file { create setattr };
