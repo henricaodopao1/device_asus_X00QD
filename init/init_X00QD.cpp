@@ -71,10 +71,9 @@ void NFC_check()
     std::string check;
 
     getline(infile, check);
-    if (!check.compare("SUPPORTED")) {
+    if (!check.compare("SUPPORTED"))
         property_override("ro.hq.support.nfc", "1");
-        property_override("ro.boot.product.hardware.sku", "NFC");
-    } else
+    else
         property_override("ro.hq.support.nfc", "0");
 }
 
