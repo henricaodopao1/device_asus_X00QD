@@ -64,21 +64,8 @@ void set_avoid_gfxaccel_config() {
     }
 }
 
-void NFC_check()
-{
-    // Check NFC
-    std::ifstream infile("/proc/NFC_CHECK");
-    std::string check;
-
-    getline(infile, check);
-    if (!check.compare("SUPPORTED"))
-        property_override("ro.hq.support.nfc", "1");
-    else
-        property_override("ro.hq.support.nfc", "0");
-}
-
 void vendor_load_properties()
 {
     set_avoid_gfxaccel_config();
-    NFC_check();
+    check_device();
 }
