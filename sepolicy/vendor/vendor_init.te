@@ -4,6 +4,8 @@ allow vendor_init asdf_file:lnk_file read;
 allow vendor_init fac_file:filesystem getattr;
 allow vendor_init log_file:dir relabelto;
 
+get_prop(vendor_init, customize_prop)
+
 allow init adsprpcd_file:file mounton;
 allow vendor_init proc:file w_file_perms;
 
