@@ -43,6 +43,7 @@ vendor.vidc.enc.disable.pq=true
 ro.netflix.bsp_rev=Q660-13149-1
 
 # NFC
+ro.hardware.nfc_nci=nqx.default
 ro.nfc.port=I2C
 
 # NTP Server
