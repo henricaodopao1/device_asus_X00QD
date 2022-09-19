@@ -41,7 +41,7 @@ on fs
     restorecon_recursive /vendor/factory
 
     chmod 770 /mnt/vendor/persist
-	chmod 770 /mnt/vendor/persist/data
+    chmod 770 /mnt/vendor/persist/data
 
     chown system system /vendor/ADF
     chmod 0775 /vendor/ADF
@@ -83,3 +83,15 @@ on boot
     chmod 0660 /sys/class/power_supply/battery/charging_enabled
     chown system system /sys/class/power_supply/battery/device/smartchg_stop_charging
     chmod 0660 /sys/class/power_supply/battery/device/smartchg_stop_charging
+    
+    chown system system /sys/devices/virtual/sensors/frgbsensor/switch
+    chown system system /sys/devices/virtual/sensors/lsensor/adc
+    chown system system /sys/devices/virtual/sensors/lsensor/cal
+    chown system system /sys/devices/virtual/sensors/lsensor/selection
+    chown system system /sys/devices/virtual/sensors/lsensor/switch
+    chown system system /sys/devices/virtual/sensors/psensor/hi_cal
+    chown system system /sys/devices/virtual/sensors/psensor/inf_cal
+    chown system system /sys/devices/virtual/sensors/psensor/low_cal
+    chown system system /sys/devices/virtual/sensors/psensor/proxm
+    chown system system /sys/devices/virtual/sensors/psensor/selection
+    chown system system /sys/devices/virtual/sensors/psensor/switch
