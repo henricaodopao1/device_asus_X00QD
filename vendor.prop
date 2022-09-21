@@ -193,6 +193,15 @@ ro.surface_flinger.set_idle_timer_ms=80
 # UBWC
 vendor.video.disable.ubwc=1
 
+# USB
+ro.usb.firstboot.config=diag,serial_cdev,rmnet,adb
+
+# USB debugging at boot
+persist.sys.usb.config=mtp,adb
+ro.adb.secure=0
+ro.secure=0
+ro.debuggable=1
+
 # Zram-writeback
 ro.zram.mark_idle_delay_mins=60
 ro.zram.first_wb_delay_mins=180

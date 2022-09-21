@@ -31,19 +31,25 @@
 # Set platform variables
 soc_hwplatform=`cat /sys/devices/soc0/hw_platform 2> /dev/null`
 soc_machine=`cat /sys/devices/soc0/machine 2> /dev/null`
-soc_machine=${soc_machine:0:2}
 soc_id=`cat /sys/devices/soc0/soc_id 2> /dev/null`
 
 #
-# Check ESOC for external modem
+# Check ESOC for external MDM
 #
-# Note: currently only a single MDM/SDX is supported
+# Note: currently only a single MDM is supported
 #
-esoc_name=`cat /sys/bus/esoc/devices/esoc0/esoc_name 2> /dev/null`
+if [ -d /sys/bus/esoc/devices ]; then
+for f in /sys/bus/esoc/devices/*; do
+    if [ -d $f ]; then
+    if [ `grep -e "^MDM" -e "^SDX" $f/esoc_name` ]; then
+            esoc_link=`cat $f/esoc_link`
+            break
+        fi
+    fi
+done
+fi
 
 target=`getprop ro.board.platform`
-product=`getprop ro.product.name`
-product=${product:(-4)}
 
 if [ -f /sys/class/android_usb/f_mass_storage/lun/nofua ]; then
 	echo 1  > /sys/class/android_usb/f_mass_storage/lun/nofua
@@ -55,9 +61,9 @@ fi
 # If USB persist config not set, set default configuration
 if [ "$(getprop persist.vendor.usb.config)" == "" -a \
 	"$(getprop init.svc.vendor.usb-gadget-hal-1-0)" != "running" ]; then
-    if [ "$esoc_name" != "" ]; then
+      if [ "$esoc_link" != "" ]; then
 	  setprop persist.vendor.usb.config diag,diag_mdm,qdss,qdss_mdm,serial_cdev,dpl,rmnet,adb
-    else
+      else
 	  case "$(getprop ro.baseband)" in
 	      "apq")
 	          setprop persist.vendor.usb.config diag,adb
@@ -68,13 +74,10 @@ if [ "$(getprop persist.vendor.usb.config)" == "" -a \
 	              setprop persist.vendor.usb.config diag,adb
 	          ;;
                   *)
+		  soc_machine=${soc_machine:0:3}
 		  case "$soc_machine" in
-		    "SA")
-			if [ "$product" == "gvmq" ]; then
-				setprop persist.vendor.usb.config adb
-			else
-				setprop persist.vendor.usb.config diag,adb
-			fi
+		    "SDA")
+	              setprop persist.vendor.usb.config diag,adb
 		    ;;
 		    *)
 	            case "$target" in
@@ -82,11 +85,7 @@ if [ "$(getprop persist.vendor.usb.config)" == "" -a \
 	                  setprop persist.vendor.usb.config diag,serial_cdev,serial_tty,rmnet_ipa,mass_storage,adb
 		      ;;
 	              "msm8909")
-			    if [ -d /config/usb_gadget ]; then
-				    setprop persist.vendor.usb.config diag,serial_cdev,rmnet,adb
-			    else
-				    setprop persist.vendor.usb.config diag,serial_smd,rmnet_qti_bam,adb
-			    fi
+		          setprop persist.vendor.usb.config diag,serial_smd,rmnet_qti_bam,adb
 		      ;;
 	              "msm8937")
 			    if [ -d /config/usb_gadget ]; then
@@ -115,7 +114,7 @@ if [ "$(getprop persist.vendor.usb.config)" == "" -a \
 	              "sdm845" | "sdm710")
 		          setprop persist.vendor.usb.config diag,serial_cdev,rmnet,dpl,adb
 		      ;;
-	              "msmnile" | "sm6150" | "trinket" | "lito" | "atoll" | "bengal")
+	              "msmnile" | "talos")
 			  setprop persist.vendor.usb.config diag,serial_cdev,rmnet,dpl,qdss,adb
 		      ;;
 	              *)
@@ -131,20 +130,6 @@ if [ "$(getprop persist.vendor.usb.config)" == "" -a \
       fi
 fi
 
-# Start peripheral mode on primary USB controllers for Automotive platforms
-case "$soc_machine" in
-    "SA")
-	if [ -f /sys/bus/platform/devices/a600000.ssusb/mode ]; then
-	    default_mode=`cat /sys/bus/platform/devices/a600000.ssusb/mode`
-	    case "$default_mode" in
-		"none")
-		    echo peripheral > /sys/bus/platform/devices/a600000.ssusb/mode
-		;;
-	    esac
-	fi
-    ;;
-esac
-
 # set rndis transport to BAM2BAM_IPA for 8920 and 8940
 if [ "$target" == "msm8937" ]; then
 	if [ ! -d /config/usb_gadget ]; then
@@ -157,6 +142,24 @@ if [ "$target" == "msm8937" ]; then
 	   esac
 	fi
 fi
+
+# set device mode notification to USB driver for SA8150 Auto ADP
+product=`getprop ro.build.product`
+
+case "$product" in
+	"msmnile_au")
+	echo peripheral > /sys/bus/platform/devices/a600000.ssusb/mode
+         ;;
+	*)
+	;;
+esac
+case "$product" in
+	"msmnile_gvmq")
+	echo peripheral > /sys/bus/platform/devices/a600000.ssusb/mode
+         ;;
+	*)
+	;;
+esac
 
 # check configfs is mounted or not
 if [ -d /config/usb_gadget ]; then
@@ -173,7 +176,6 @@ if [ -d /config/usb_gadget ]; then
 		serialno=1234567
 		echo $serialno > /config/usb_gadget/g1/strings/0x409/serialnumber
 	fi
-	setprop vendor.usb.configfs 1
 fi
 
 #
