@@ -12,24 +12,26 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk
 # Inherit some common LineageOS stuff
 $(call inherit-product, vendor/dot/config/common.mk)
 
-# Inherit from X00TD device
+# Inherit from X00QD device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Bootanimation
 TARGET_BOOT_ANIMATION_RES := 1080
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := dot_X00QD
-PRODUCT_DEVICE := X00QD
 PRODUCT_BRAND := asus
-PRODUCT_MODEL := Zenfone 5
+PRODUCT_DEVICE := X00QD
 PRODUCT_MANUFACTURER := asus
-
+PRODUCT_MODEL := Zenfone 5
+PRODUCT_NAME := dot_X00QD
 PRODUCT_GMS_CLIENTID_BASE := android-asus
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=WW_X00QD \
-    PRIVATE_BUILD_DESC="redfin-user 12 SPB5.210812.002 7671067 release-keys"
+TARGET_VENDOR_PRODUCT_NAME := X00QD
+TARGET_VENDOR_DEVICE_NAME := X00QD
 
-# Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := google/redfin/redfin:12/SPB5.210812.002/7671067:user/release-keys
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_DEVICE=X00QD \
+    PRODUCT_NAME=WW_X00QD \
+    PRIVATE_BUILD_DESC="WW_Phone-user 9 PPR1.180610.009 16.0615.2006.131-0 release-keys"
+
+BUILD_FINGERPRINT := asus/WW_Phone/ASUS_X00QD:9/PPR1.180610.009/16.0615.2006.131-0:user/release-keys
