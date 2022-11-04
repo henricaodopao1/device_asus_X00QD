@@ -56,6 +56,8 @@ ro.nfc.port=I2C
 # NTP Server
 persist.backup.ntpServer="0.pool.ntp.org"
 
+# Disable Skia tracing by default
+debug.hwui.skia_atrace_enabled=false
 
 # QC framework value-adds
 ro.vendor.qti.va_aosp.support=1
