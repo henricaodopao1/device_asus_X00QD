@@ -17,8 +17,8 @@
 -->
 <resources>
     <dimen name="rounded_corner_content_padding">12dp</dimen>
-    <dimen name="system_icons_keyguard_padding_end">6dp</dimen>
+    <dimen name="system_icons_keyguard_padding_end">1dp</dimen>
 
     <!-- the padding on the start and the end of the statusbar -->
-    <dimen name="status_bar_extra_padding">8dp</dimen>
+    <dimen name="status_bar_extra_padding">1dp</dimen>
 </resources>
