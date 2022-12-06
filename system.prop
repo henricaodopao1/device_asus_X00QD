@@ -76,5 +76,8 @@ persist.timed.enable=true
 persist.debug.wfd.enable=1
 persist.sys.wfd.virtual=0
 
+# Pre-Rendering
+ro.vendor.perf.scroll_opt=true
+
 # Zygote
 zygote.critical_window.minute=10
