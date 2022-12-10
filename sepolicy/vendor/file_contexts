@@ -24,7 +24,7 @@
 /asdf/CHGLimit_kernel                                                       u:object_r:batterystats_file:s0
 
 # Light HAL
-/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.X00TD                u:object_r:hal_light_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.X00QD                u:object_r:hal_light_default_exec:s0
 
 # Persist
 /persist(/.*)?                                                                u:object_r:mnt_vendor_file:s0
