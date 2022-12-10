@@ -486,7 +486,7 @@ PRODUCT_COPY_FILES += \
 
 # Touch HAL
 PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.X00TD
+    vendor.lineage.touch@1.0-service.X00QD
 
 # USB
 PRODUCT_PACKAGES += \
