@@ -39,6 +39,12 @@ iorapd.readahead.enable=false
 ro.iorapd.enable=false
 persist.device_config.runtime_native_boot.iorap_readahead_enable=false
 
+# Low-RAM optimizations
+ro.config.low_ram=true
+persist.sys.force_highendgfx=true
+dalvik.vm.jit.codecachesize=0
+config.disable_atlas=true
+
 # Media
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 media.stagefright.thumbnail.prefer_hw_codecs=true
