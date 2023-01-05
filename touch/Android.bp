@@ -12,6 +12,7 @@ cc_binary {
     vendor: true,
     srcs: [
         "TouchscreenGesture.cpp",
+        "GloveMode.cpp",
         "service.cpp",
     ],
     shared_libs: [
