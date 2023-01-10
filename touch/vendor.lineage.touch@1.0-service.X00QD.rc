@@ -3,15 +3,6 @@ on boot
     chown system system /proc/touchpanel/double_tap_enable
     chmod 0660 /proc/touchpanel/double_tap_enable
 
-    # Permissions for gestures
-    chown system system /proc/touchpanel/letter_c_enable
-    chown system system /proc/touchpanel/letter_e_enable
-    chown system system /proc/touchpanel/letter_s_enable
-    chown system system /proc/touchpanel/letter_v_enable
-    chown system system /proc/touchpanel/letter_w_enable
-    chown system system /proc/touchpanel/letter_z_enable
-    chown system system /proc/touchpanel/up_swipe_enable
-
     # Permission for glove mode
     chown system system /sys/bus/i2c/devices/4-0038/glove_mode
     chmod 0660 /sys/bus/i2c/devices/4-0038/glove_mode
