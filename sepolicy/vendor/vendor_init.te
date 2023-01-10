@@ -19,7 +19,13 @@ set_prop(vendor_init, vendor_power_prop)
 allow init adsprpcd_file:file mounton;
 
 # Allow vendor_init to set vendor_camera_prop
+get_prop(vendor_init, camera_prop)
+set_prop(vendor_init, camera_prop)
+get_prop(vendor_init, vendor_camera_prop)
 set_prop(vendor_init, vendor_camera_prop)
+
+get_prop(vendor_init, hal_audio_prop)
+set_prop(vendor_init, hal_audio_prop)
 
 allow vendor_init proc_sched_energy_aware:file w_file_perms;
 allow vendor_init unlabeled:{ dir file } { getattr relabelfrom };
