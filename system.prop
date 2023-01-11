@@ -2,6 +2,13 @@
 # system.prop for sdm660
 #
 
+# Audio
+qcom.hw.aac.encoder=true
+ro.asus.audio.dualSPK=true
+ro.config.media_vol_steps=25
+ro.config.vc_call_vol_steps=7
+tunnel.audio.encode=true
+
 # Bluetooth
 bt.max.hfpclient.connections=1
 vendor.bluetooth.soc=cherokee

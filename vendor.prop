@@ -19,12 +19,13 @@ af.fast_track_multiplier=1
 audio.deep_buffer.media=true
 audio.offload.min.duration.secs=30
 audio.offload.video=true
+persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
 audio.sys.noisy.broadcast.delay=600
 audio.sys.offload.pstimeout.secs=3
+persist.audio.format.24bit=true
 persist.vendor.audio.fluence.voicecall=true
-persist.vendor.audio.fluence.voicecomm=true
 persist.vendor.audio.fluence.voicerec=false
-persist.vendor.audio.fluence.speaker=false
+persist.vendor.audio.fluence.speaker=true
 persist.vendor.audio.hifi.int_codec=true
 persist.vendor.audio.hw.binder.size_kbyte=1024
 persist.vendor.audio.ras.enabled=false
@@ -90,7 +91,7 @@ vendor.audio.use.sw.alac.decoder=true
 vendor.audio.use.sw.ape.decoder=true
 vendor.audio.volume.headset.gain.depcal=true
 vendor.audio.tunnel.encode=false
-vendor.voice.path.for.pcm.voip=false
+vendor.voice.path.for.pcm.voip=true
 vendor.audio.gsl.shmem.dmaheap.uncached=true
 
 # Bluetooth
@@ -118,12 +119,14 @@ vendor.qcom.bluetooth.soc=cherokee
 
 # Camera
 persist.vendor.camera.eis.enable=1
-persist.vendor.camera.expose.aux=1
+persist.vendor.camera.ois.disable=1
 persist.vendor.camera.is_type=4
+persist.vendor.camera.expose.aux=1
 persist.vendor.camera.mpo.disabled=1
 persist.vendor.camera.preview.ubwc=0
 persist.vendor.camera.HAL3.enabled=1
-vendor.camera.aux.packagelist=com.google.android.GoogleCamera,org.lineageos.aperture,com.android.camera
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.google.android.GoogleCamera,org.lineageos.aperture,com.android.camera
+vendor.camera.aux.packageexcludelist=org.telegram.messenger,com.microsoft.teams,com.discord
 persist.vendor.camera.perflock.enable=0
 vendor.camera.aux.packagelist=com.android.camera,com.ngcam.camera,org.lineageos.aperture,org.lineageos.aperture.dev
 
