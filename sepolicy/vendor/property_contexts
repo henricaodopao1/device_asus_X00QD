@@ -49,6 +49,8 @@ vendor.debug.camera.                                u:object_r:camera_prop:s0
 
 # Audio
 use.audio.eu.parameters            u:object_r:hal_audio_prop:s0
+audio_hal.in_period_size           u:object_r:hal_audio_prop:s0
+audio_hal.period_multiplier        u:object_r:hal_audio_prop:s0
 audio.asus.rcv_amp_cal             u:object_r:hal_audio_prop:s0
 audio.asus.spk_amp_cal             u:object_r:hal_audio_prop:s0
 audio.output.selected              u:object_r:hal_audio_prop:s0
