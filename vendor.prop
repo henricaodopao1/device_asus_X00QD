@@ -161,11 +161,6 @@ vendor.fm.a2dp.conc.disabled=false
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
-# GMS
-ro.com.google.clientidbase.ms=android-asus-tpin
-ro.com.google.rlzbrandcode=ASUP
-ro.com.google.rlz_ap_whitelist=y0,y5,y6,y7,y9
-
 # Graphics
 debug.renderengine.backend=skiaglthreaded
 ro.hardware.egl=adreno
@@ -173,9 +168,6 @@ ro.hardware.vulkan=sdm660
 
 # HEH filename encryption is being dropped
 ro.crypto.volume.filenames_mode=aes-256-cts
-
-# NTP Server
-persist.backup.ntpServer=0.pool.ntp.org
 
 # Radio
 persist.radio.multisim.config=dsds
@@ -192,12 +184,6 @@ vendor.rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ro.telephony.iwlan_operation_mode=legacy
 ro.telephony.default_network=20,20
 ro.com.android.dataroaming=false
-
-# Radio - IMS
-persist.dbg.ims_volte_enable=1
-persist.dbg.volte_avail_ovr=1
-persist.dbg.vt_avail_ovr=1
-persist.dbg.wfc_avail_ovr=1
 
 # Sensors
 ro.vendor.sdk.sensors.gestures=false
