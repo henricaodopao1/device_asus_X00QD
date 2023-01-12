@@ -20,12 +20,9 @@ audio.deep_buffer.media=true
 audio.offload.min.duration.secs=30
 audio.offload.video=true
 persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
-audio.sys.noisy.broadcast.delay=600
-audio.sys.offload.pstimeout.secs=3
 persist.audio.format.24bit=true
 persist.vendor.audio.fluence.voicecall=true
 persist.vendor.audio.fluence.voicerec=false
-persist.vendor.audio.fluence.voicecomm=true
 persist.vendor.audio.fluence.speaker=true
 persist.vendor.audio.hifi.int_codec=true
 persist.vendor.audio.hw.binder.size_kbyte=1024
@@ -151,7 +148,6 @@ debug.sf.hw=1
 debug.sf.recomputecrop=0
 debug.sf.latch_unsignaled=1
 debug.sf.disable_client_composition_cache=1
-persist.hwc.mdpcomp.enable=true
 ro.opengles.version=196610
 vendor.display.disable_rotator_downscale=1
 vendor.display.disable_scaler=1
@@ -160,7 +156,6 @@ vendor.display.disable_scaler=1
 drm.service.enabled=true
 
 # FM
-vendor.hw.fm.init=0
 vendor.fm.a2dp.conc.disabled=false
 
 # FRP
@@ -236,12 +231,6 @@ vendor.video.disable.ubwc=1
 
 # USB
 ro.usb.firstboot.config=diag,serial_cdev,rmnet,adb
-
-# USB debugging at boot
-persist.sys.usb.config=mtp,adb
-ro.adb.secure=0
-ro.secure=0
-ro.debuggable=1
 
 # Zram-writeback
 ro.zram.mark_idle_delay_mins=60

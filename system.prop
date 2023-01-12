@@ -8,6 +8,9 @@ ro.asus.audio.dualSPK=true
 ro.config.media_vol_steps=25
 ro.config.vc_call_vol_steps=7
 tunnel.audio.encode=true
+audio.sys.noisy.broadcast.delay=600
+audio.sys.offload.pstimeout.secs=3
+persist.audio.fluence.voicecomm=true
 
 # Bluetooth
 bt.max.hfpclient.connections=1
@@ -30,6 +33,15 @@ debug.sdm.support_writeback=0
 vendor.display.enable_default_color_mode=1
 vendor.gralloc.enable_fb_ubwc=1
 vendor.display.disable_skip_validate=1
+persist.hwc.mdpcomp.enable=true
+
+# FM
+vendor.hw.fm.init=0
+
+# GMS
+ro.com.google.clientidbase.ms=android-asus-tpin
+ro.com.google.rlzbrandcode=ASUP
+ro.com.google.rlz_ap_whitelist=y0,y5,y6,y7,y9
 
 # GPS
 persist.vendor.overlay.izat.optin=rro
@@ -60,6 +72,10 @@ vendor.vidc.enc.disable_bframes=1
 vendor.vidc.dec.enable.downscalar=1
 vendor.vidc.enc.disable.pq=true
 
+# Power Saving
+power.saving.mode=1
+pm.sleep_mode=1
+
 # Netflix
 ro.netflix.bsp_rev=Q660-13149-1
 
@@ -75,6 +91,10 @@ debug.hwui.skia_atrace_enabled=false
 
 # QC framework value-adds
 ro.vendor.qti.va_aosp.support=1
+
+# Radio
+ro.vold.umsdirtyratio=20
+ro.ril.disable.power.collapse=0
 
 # RIL
 DEVICE_PROVISIONED=1
@@ -98,3 +118,9 @@ ro.vendor.perf.scroll_opt=true
 
 # Zygote
 zygote.critical_window.minute=10
+
+# USB debugging at boot
+persist.sys.usb.config=mtp,adb
+ro.adb.secure=0
+ro.secure=0
+ro.debuggable=1
