@@ -56,8 +56,6 @@ audio.asus.spk_amp_cal             u:object_r:hal_audio_prop:s0
 audio.output.selected              u:object_r:hal_audio_prop:s0
 audio.mic.selected                 u:object_r:hal_audio_prop:s0
 persist.audio.format.24bit         u:object_r:hal_audio_prop:s0
-persist.vendor.audio.fluence.voicecomm          u:object_r:hal_audio_prop:s0
-
 
 # Sensors 
 asus.sensor.                                        u:object_r:sensors_prop:s0
