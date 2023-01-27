@@ -75,5 +75,8 @@ fp.version.driver                                   u:object_r:fingerprint_goodi
 # NFC
 ro.hq.support.nfc                             u:object_r:nfc_sensors_prop:s0
 
+# Hardware
+ro.hardware.chipname               u:object_r:build_prop:s0
+
 # Power
 vendor.powerhal.                                 u:object_r:vendor_power_prop:s0
