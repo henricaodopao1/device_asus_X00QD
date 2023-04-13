@@ -162,6 +162,7 @@ vendor.fm.a2dp.conc.disabled=false
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
 # Graphics
+debug.hwui.renderer=vulkan
 debug.renderengine.backend=skiaglthreaded
 ro.hardware.egl=adreno
 ro.hardware.vulkan=sdm660
