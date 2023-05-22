@@ -5,8 +5,8 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_X00QD.mk
+    $(LOCAL_DIR)/bootleg_X00QD.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_X00QD-userdebug
+    bootleg_X00QD-userdebug
 
